@@ -1,113 +1,132 @@
-import Image from 'next/image'
+'use client'
+
+import Head from "next/head";
+import {BsFillMoonStarsFill} from "react-icons/bs";
+import {AiFillLinkedin, AiFillGithub} from "react-icons/ai";
+import Image from "next/image";
+import mb from '../../public/mb.png';
+import web1 from '../../public/dx-web-1.jpg';
+import web2 from '../../public/dx-web-2.jpg';
+import project1 from '../../public/TicketNotifications.png';
+import project2 from '../../public/ServerChecklist.png';
+import { useState } from "react";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      <div className={darkMode ? "dark" : ""}>
+        <Head>
+            <title>Mildred Brito Portfolio</title>
+            <meta name="description" content="Online portfolio" />
+        </Head>
+
+        <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-background-color">
+
+            {/* Home Section */}
+
+            <section className="min-h-screen">
+                <nav className="py-10 mb-12 flex justify-between">
+                    <h1 className="text-xl font-burtons dark:text-custom-lila">MB</h1>
+                    <ul className="flex items-center">
+                        <li>
+                            <BsFillMoonStarsFill className="cursor-pointer text-2xl"
+                            onClick={() => setDarkMode(!darkMode)}/>
+                        </li>
+                        <li>
+                            <a className="bg-gradient-to-r from-indigo-500 to-violet-500 text-white px-4 py-2 rounded-md ml-8"
+                               href="https://drive.google.com/file/d/1oeyNDZzyMSGQRLVw_9Ay-abT9JI_3atA/view?usp=drive_link" target="_blank">
+                                Resume
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div className="text-center p-10">
+                    <h2 className="text-5xl py-2 font-medium text-custom-lila md:text-6xl dark:text-custom-pink">Mildred Brito</h2>
+                    <h3 className="text-2xl py-2 md:text-3xl dark:text-custom-lila">Full Stack Software Developer</h3>
+                    <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-custom-white">Passionate about crafting innovative software with my experience in JavaScript/ReactJS and
+                        Java/Spring boot, I’m dedicated to staying updated with industry trends and thrive in
+                        collaborating with diverse teams for impactful solutions.</p>
+                </div>
+                <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
+                    <a href="https://www.linkedin.com/in/mildredbrito/" target="_blank" rel="noopener noreferrer">
+                        <AiFillLinkedin className="dark:text-custom-white"/>
+                    </a>
+                    <a href="https://github.com/millieb" target="_blank" rel="noopener noreferrer">
+                        <AiFillGithub className="dark:text-custom-white"/>
+                    </a>
+                </div>
+                <div className="relative mx-auto mt-20 w-80 h-80 overflow-hidden md:h-96 md:w-96">
+                    <Image src={mb} layout="fill" objectFit="cover" className="rounded-full" alt="cartoon portrait of Mildred Brito"/>
+                </div>
+            </section>
+
+            {/* Work Section */}
+            <section>
+                <div>
+                    <h3 className="text-3xl py-10 mt-8 font-medium text-custom-lila">
+                        Work
+                    </h3>
+                </div>
+
+                <div className="flex justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-5">
+                        {/* Project 1 Card */}
+                        <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
+                            <Image src={web1} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 1"/>
+                            <h3 className="text-lg font-medium pt-8 pb-2">DataXport Careers</h3>
+                            <p className="text-gray-800 py-2">Restructured the career section of the company&apos;s website, which now displays
+                                current openings, teams, and mission/vision.</p>
+                            <a href="https://jobs.dataxport.net/careers.html" target="_blank" rel="noopener noreferrer">
+                                <button type="button" className="inline-block px-8 py-2 mb-0 font-bold text-center
+                            uppercase align-middle transition-all bg-transparent border border-solid rounded-lg
+                            shadow-none cursor-pointer leading-pro ease-soft-in text-xs hover:scale-102
+                            active:shadow-soft-xs tracking-tight-soft border-custom-purple text-custom-purple
+                            hover:border-custom-purple hover:bg-transparent hover:text-custom-purple hover:opacity-75
+                            hover:shadow-none active:bg-custom-purple active:text-white active:hover:bg-transparent
+                            active:hover:text-custom-purple">
+                                    View Project
+                                </button>
+                            </a>
+                        </div>
+                        {/* Project 2 Card */}
+                        <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
+                            <Image src={web2} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
+                            <h3 className="text-lg font-medium pt-8 pb-2">DataXport Careers 2</h3>
+                            <p className="text-gray-800 py-2">An extension to their Careers website that informs about
+                                the responsibilities, benefits, and requirements of the call center position.</p>
+                            <a href="https://jobs.dataxport.net/ccinformation.html" target="_blank" rel="noopener noreferrer">
+                                <button type="button" className="inline-block px-8 py-2 mb-0 font-bold text-center
+                            uppercase align-middle transition-all bg-transparent border border-solid rounded-lg
+                            shadow-none cursor-pointer leading-pro ease-soft-in text-xs hover:scale-102
+                            active:shadow-soft-xs tracking-tight-soft border-custom-purple text-custom-purple
+                            hover:border-custom-purple hover:bg-transparent hover:text-custom-purple hover:opacity-75
+                            hover:shadow-none active:bg-custom-purple active:text-white active:hover:bg-transparent
+                            active:hover:text-custom-purple">
+                                    View Project
+                                </button>
+                            </a>
+                        </div>
+                        {/* Project 3 Card */}
+                        <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
+                            <Image src={project1} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
+                            <h3 className="text-lg font-medium pt-8 pb-2">Ticket Notifications</h3>
+                            <p className="text-gray-800 py-2">Automated a ticket system to display Windows 10
+                                notifications after a set period, aiming to reduce response times.</p>
+                        </div>
+                        {/* Project 4 Card */}
+                        <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
+                            <Image src={project2} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
+                            <h3 className="text-lg font-medium pt-8 pb-2">Server Checklist</h3>
+                            <p className="text-gray-800 py-2">A Windows application designed to automate the daily process
+                                of inspecting the server room, saving the relevant information into an Excel file.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+        </main>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   )
 }
