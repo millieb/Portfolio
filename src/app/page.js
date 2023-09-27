@@ -4,11 +4,11 @@ import Head from "next/head";
 import {BsFillMoonStarsFill} from "react-icons/bs";
 import {AiFillLinkedin, AiFillGithub} from "react-icons/ai";
 import Image from "next/image";
-import mb from '../../public/mb.png';
-import web1 from '../../public/dx-web-1.jpg';
-import web2 from '../../public/dx-web-2.jpg';
-import project1 from '../../public/TicketNotifications.png';
-import project2 from '../../public/ServerChecklist.png';
+import mb from 'public/mb.png';
+import web1 from '/public/dx-web-1.jpg';
+import web2 from '/public/dx-web-2.jpg';
+import project1 from '/public/TicketNotifications.png';
+import project2 from '/public/ServerChecklist.png';
 import { useState } from "react";
 
 export default function Home() {
@@ -56,7 +56,7 @@ export default function Home() {
                     </a>
                 </div>
                 <div className="relative mx-auto mt-20 w-80 h-80 overflow-hidden md:h-96 md:w-96">
-                    <Image src={mb} layout="fill" objectFit="cover" className="rounded-full" alt="cartoon portrait of Mildred Brito"/>
+                    <Image unoptimized src={mb} layout="fill" objectFit="cover" className="rounded-full" alt="cartoon portrait of Mildred Brito"/>
                 </div>
             </section>
 
@@ -72,7 +72,7 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-5">
                         {/* Project 1 Card */}
                         <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
-                            <Image src={web1} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 1"/>
+                            <Image unoptimized src={web1} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 1"/>
                             <h3 className="text-lg font-medium pt-8 pb-2">DataXport Careers</h3>
                             <p className="text-gray-800 py-2">Restructured the career section of the company&apos;s website, which now displays
                                 current openings, teams, and mission/vision.</p>
@@ -90,7 +90,7 @@ export default function Home() {
                         </div>
                         {/* Project 2 Card */}
                         <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
-                            <Image src={web2} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
+                            <Image unoptimized src={web2} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
                             <h3 className="text-lg font-medium pt-8 pb-2">DataXport Careers 2</h3>
                             <p className="text-gray-800 py-2">An extension to their Careers website that informs about
                                 the responsibilities, benefits, and requirements of the call center position.</p>
@@ -108,14 +108,14 @@ export default function Home() {
                         </div>
                         {/* Project 3 Card */}
                         <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
-                            <Image src={project1} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
+                            <Image unoptimized src={project1} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
                             <h3 className="text-lg font-medium pt-8 pb-2">Ticket Notifications</h3>
                             <p className="text-gray-800 py-2">Automated a ticket system to display Windows 10
                                 notifications after a set period, aiming to reduce response times.</p>
                         </div>
                         {/* Project 4 Card */}
                         <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white">
-                            <Image src={project2} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
+                            <Image unoptimized src={project2} width={'100%'} height={'100%'} layout="responsive" className="rounded-lg object-cover" alt="Webstie 2"/>
                             <h3 className="text-lg font-medium pt-8 pb-2">Server Checklist</h3>
                             <p className="text-gray-800 py-2">A Windows application designed to automate the daily process
                                 of inspecting the server room, saving the relevant information into an Excel file.</p>
