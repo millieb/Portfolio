@@ -1,4 +1,5 @@
 {
+  "homepage": "http://millieb.github.io/Portfolio/",
   "name": "portfolio2023-2",
   "version": "0.1.0",
   "private": true,
@@ -6,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.2",
@@ -20,6 +23,7 @@
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "gh-pages": "^6.1.1",
     "postcss": "latest",
     "tailwindcss": "latest"
   }
