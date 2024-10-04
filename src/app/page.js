@@ -5,10 +5,10 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Image from "next/image";
 import mb from "../../public/mb.png";
-import web1 from "/public/dx-web-1.jpg";
-import web2 from "/public/dx-web-2.jpg";
-import project1 from "/public/TicketNotifications.png";
-import project2 from "/public/ServerChecklist.png";
+import web1 from "../../public/dx-web-1.jpg";
+import web2 from "../..//public/dx-web-2.jpg";
+import project1 from "../..//public/TicketNotifications.png";
+import project2 from "../../public/ServerChecklist.png";
 import { useState } from "react";
 
 export default function Home() {
